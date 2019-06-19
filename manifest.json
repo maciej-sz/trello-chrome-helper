@@ -2,5 +2,17 @@
   "name": "Trello Helper",
   "version": "0.1",
   "description": "Helps with Trello! For Chrome.",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "background": {
+    "scripts": ["src/background/card-number/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://trello.com/*"],
+      "js": ["src/background/card-number/content.js"],
+      "run_at": "document_end"
+    }
+  ]
 }
