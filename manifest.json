@@ -5,13 +5,14 @@
   "manifest_version": 2,
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "background": {
-    "scripts": ["src/background/card-number/background.js"],
+    "scripts": ["src/background/card-number/js/background.js"],
     "persistent": false
   },
   "content_scripts": [
     {
       "matches": ["https://trello.com/*"],
-      "js": ["src/background/card-number/content.js"],
+      "js": ["vendor/jquery/jquery-3.4.1.min.js", "src/background/card-number/js/content.js"],
+      "css": ["src/background/card-number/css/main.css"],
       "run_at": "document_end"
     }
   ]

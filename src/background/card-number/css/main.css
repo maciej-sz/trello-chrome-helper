@@ -1,0 +1,7 @@
+.list-card-title .card-number {
+    display: inline;
+    float: right;
+    width: 40px;
+    font-weight: bold;
+    text-align: right;
+}
